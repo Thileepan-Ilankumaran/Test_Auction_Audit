@@ -5,7 +5,7 @@
 
 This is the report from a security audit performed on [Test Contract](https://gist.github.com/yuriy77k/edf8b3bcddbc3d43967f5765edf4727e) by [Thileepan-Ilankumaran](https://github.com/Thileepan-Ilankumaran). 
 
-The audit focused primarily on the security of funds and fault tolerance of the auction. The main intention of this smart contract is to offer Tokens by auction.
+The audit focused primarily on the security of funds and fault tolerance of the test auction contract. The main intention of this smart contract is to offer Tokens by auction.
 
 # In scope
 
@@ -33,7 +33,7 @@ In total, **7 issues** were reported including:
 
 Any interaction from a contract (A) with another contract (B) and any transfer of Ether hands over control to that contract (B). This makes it possible for B to call back into A before this interaction is completed.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/1)
 
 #### Recommendation
 
@@ -47,7 +47,7 @@ You can use the [Checks-Effects-Interactions](https://docs.soliditylang.org/en/v
 
 Several tokens do not revert in case of failure and return false. If one of these tokens is used then attacker can withdraw tokens for free.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-transfer).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-transfer). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/2)
 
 #### Recommendation
 
@@ -61,7 +61,7 @@ Use `SafeERC20`, or ensure that the transfer/transferFrom return value is checke
 
 Detection of the [reentrancy bug](https://github.com/crytic/not-so-smart-contracts/tree/master/reentrancy). Do not report reentrancies that involve Ether
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-1). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/3)
 
 ### 4. Missing events arithmetic
 
@@ -73,7 +73,7 @@ Detect missing events for critical arithmetic parameters.
 
 `setCaps()`has no event, so it is difficult to track off-chain changes in the buy price
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-arithmetic).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#missing-events-arithmetic). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/4)
 
 ### 5. Inner variables visibility.
 
@@ -83,7 +83,7 @@ Detailed description can be found [here](https://github.com/crytic/slither/wiki/
 
 Detect missing zero address validation.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#missing-zero-address-validation). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/5)
 
 #### Recommendation
 
@@ -97,7 +97,7 @@ Check that the address is not zero.
 
 Detection of the [reentrancy bug](https://github.com/crytic/not-so-smart-contracts/tree/master/reentrancy). Only report reentrancy that acts as a double call.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-2). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/6)
 
 ### 7. Calls inside a loop. 
 
@@ -107,7 +107,7 @@ Detailed description can be found [here](https://github.com/crytic/slither/wiki/
 
 Calls inside a loop might lead to a denial-of-service attack.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/7)
 
 #### Recommendation
 
@@ -121,7 +121,7 @@ Favor pull over push strategy for external calls.
 
 Dangerous usage of timestamp comparison can be manipulated by miners.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#block-timestamp). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/8)
 
 #### Recommendation
 
@@ -135,7 +135,7 @@ Avoid relying on timestamps.
 
 Detects the comparison to boolean constants.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#boolean-equality).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#boolean-equality). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/9)
 
 #### Recommendation
 
@@ -149,7 +149,7 @@ Remove the equality to the boolean constant.
 
 Detection of the [reentrancy bug](https://github.com/crytic/not-so-smart-contracts/tree/master/reentrancy). Only report reentrancy that is based on `transfer` or `send`.
 
-Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4).
+Detailed description can be found [here](https://github.com/crytic/slither/wiki/Detector-Documentation#reentrancy-vulnerabilities-4). Code ---> [here] (https://github.com/Thileepan-Ilankumaran/Test_Auction_Audit/issues/10)
 
 ### 10. Reentrancy Vulnerablity (transfer)
 

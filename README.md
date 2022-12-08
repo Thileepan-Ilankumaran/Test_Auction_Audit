@@ -13,7 +13,7 @@ The audit focused primarily on the security of funds and fault tolerance of the 
 
 # Findings
 
-In total, **7 issues** were reported including:
+In total, **10 issues** were reported including:
 
 - 2 high severity issues.
 

@@ -39,6 +39,8 @@ Detailed description can be found [here](https://github.com/crytic/slither/wiki/
 
 You can use the [Checks-Effects-Interactions](https://docs.soliditylang.org/en/v0.4.21/security-considerations.html#re-entrancy). pattern
 
+Or import [Re-entrancy.sol](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/security/ReentrancyGuard.sol) from Open Zeppelin
+
 ### 2. Unchecked Transfer
 
 #### Severity: high
